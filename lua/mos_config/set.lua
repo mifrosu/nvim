@@ -1,14 +1,20 @@
+-- use tree view in netrw
+vim.cmd("let g:netrw_liststyle = 3")
+
 vim.opt.nu = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-
+vim.opt.expandtab = true  -- expandtab to spaces
 vim.opt.smartindent = true
 
 -- vim.opt.wrap = false
+
+-- search settings
 vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 vim.opt.termguicolors = true
 
@@ -22,3 +28,7 @@ vim.opt.updatetime = 50
 
 -- yank paste to/from system clipboard
 vim.api.nvim_set_option("clipboard", "unnamedplus")
+
+-- split settings
+vim.opt.splitbelow = true
+vim.opt.splitright = true
