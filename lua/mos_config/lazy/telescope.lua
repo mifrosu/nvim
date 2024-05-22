@@ -5,7 +5,9 @@ return {
 
     dependencies = {
         "nvim-lua/plenary.nvim",
-        { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }
+        { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+        -- Useful for getting pretty icons, but requires a Nerd Font.
+        { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
 
     config = function()
@@ -28,7 +30,11 @@ return {
         telescope.load_extension('fzf')
 
         local builtin = require('telescope.builtin')
+        vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
+        vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
+        vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
         vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "Telescope: Find files" } )
+        vim.keymap.set('n', '<leader>pr', builtin.oldfiles, { desc = "Telescope: Find recent files" } )
         vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = "Telescope: Buffers" })
         vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = "Telescope: Git files" })
         vim.keymap.set('n', '<leader>pws', function()
