@@ -48,7 +48,6 @@ return {
     --         ColorMyPencils()
     --     end
     -- },
-    --
     {
         "antonk52/lake.nvim",
         name = "lake",
