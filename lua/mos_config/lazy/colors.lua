@@ -61,12 +61,22 @@ return {
     --         ColorMyPencils()
     --     end,
     -- },
+    -- {
+    --     "EdenEast/nightfox.nvim",
+    --     name = "nightfox",
+    --     config = function()
+    --         vim.cmd.colorscheme('nordfox')
+    --         ColorMyPencils()
+    --     end,
+    -- },
     {
         "shaunsingh/nord.nvim",
         name = "nord",
         config = function()
             vim.cmd.colorscheme('nord')
             vim.g.nord_italic = false
+            vim.g.nord_bold = false
+            vim.g.nord_contrast = true
             ColorMyPencils()
         end,
     },
@@ -78,13 +88,5 @@ return {
             -- vim.cmd('color lake')
             ColorMyPencils()
         end,
-    },
-    {
-        'AlexvZyl/nordic.nvim',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require('nordic').load()
-        end
     }
 }
