@@ -1,6 +1,6 @@
 function ColorMyPencils(color)
 	-- color = color or "rose-pine"
-	color = color or "lake"
+	color = color or "nord"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -31,7 +31,7 @@ return {
     --         })
     --     end
     -- },
-
+    --
     -- {
     --     "rose-pine/neovim",
     --     name = "rose-pine",
@@ -48,12 +48,43 @@ return {
     --         ColorMyPencils()
     --     end
     -- },
+    -- {
+    --     "catppuccin/nvim",
+    --     name = "catppuccin",
+    --     priority = 1000,
+    --     config = function()
+    --         -- require('catppuccin').setup({
+    --         -- })
+    --
+    --         vim.cmd.colorscheme("catppuccin-macchiato")
+    --
+    --         ColorMyPencils()
+    --     end,
+    -- },
+    {
+        "shaunsingh/nord.nvim",
+        name = "nord",
+        config = function()
+            vim.cmd.colorscheme('nord')
+            vim.g.nord_italic = false
+            ColorMyPencils()
+        end,
+    },
     {
         "antonk52/lake.nvim",
         name = "lake",
         config = function()
-            vim.cmd('color lake')
+            vim.cmd.colorscheme('lake')
+            -- vim.cmd('color lake')
             ColorMyPencils()
         end,
+    },
+    {
+        'AlexvZyl/nordic.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require('nordic').load()
+        end
     }
 }
