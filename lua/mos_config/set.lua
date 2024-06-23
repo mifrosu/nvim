@@ -41,6 +41,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.filetype.add({ pattern = {['Jenkinsfile'] = 'groovy'} })
 
 -- split settings
 vim.opt.splitbelow = true
