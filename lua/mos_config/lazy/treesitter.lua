@@ -42,6 +42,8 @@ return {
             },
         }
 
+        -- Disable point as an indent key in ruby files to preserve indenting
+        vim.cmd([[autocmd FileType ruby setlocal indentkeys-=.]])
         vim.treesitter.language.register("templ", "templ")
     end
 }
