@@ -59,4 +59,3 @@ vim.opt.mouse = "a"
 --  and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-
